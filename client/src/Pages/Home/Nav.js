@@ -1,10 +1,13 @@
-import React from "react";
-import logo from "../../logo.png";
 import "./css/nav.css";
-import user from "./imgs/user.png";
+
+import React from "react";
+
+import logo from "../../logo.png";
+
+import cross from "./imgs/cross.png"
 import gear from "./imgs/gear.png";
 import search from "./imgs/search.png";
-import cross from "./imgs/cross.png"
+import user from "./imgs/user.png";
 
 export default function Nav() {
   return (
