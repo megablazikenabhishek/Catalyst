@@ -1,5 +1,7 @@
-import React from 'react';
 import "./login.css"
+
+import React from 'react';
+
 const Login = () => {
     return (
 <>
@@ -28,8 +30,8 @@ const Login = () => {
   </div>
 </div>
 </div> 
- {/* </div> */}
- </>
+ {/* </div> */
+} < />
     );
 }
 

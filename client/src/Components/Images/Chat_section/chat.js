@@ -1,5 +1,7 @@
-import React from 'react';
 import "./chat.css"
+
+import React from 'react';
+
 const Chat = () => {
   const Community_name='mumbra gang'
     return (

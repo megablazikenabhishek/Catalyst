@@ -1,6 +1,9 @@
-import React from 'react';
 import "./signup.css"
-const Signup = () => {
+
+import React from 'react';
+
+const Signup =
+    () => {
     return (
         <>
 <div className="main_container">
@@ -20,16 +23,16 @@ const Signup = () => {
           <div className="field">
             <label>Email</label>
             <input
-              type="text"
-              name="email"
-              placeholder="Email"
-            />
-          </div>
+    type = "text"
+    name = "email"
+    placeholder =
+        "Email" / >
+        </div>
           <div className="field">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
+            <label>Password</label><
+        input
+    type = "password"
+    name = "password"
               placeholder="Password"
             />
           </div>
@@ -42,6 +45,6 @@ const Signup = () => {
 </div>
         </>
     );
-}
+    }
 
 export default Signup;
