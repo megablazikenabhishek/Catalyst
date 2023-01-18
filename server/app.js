@@ -11,7 +11,7 @@ const io = socket(server);
 
 // midlleware
 app.use(express.json());
-app.use(express.urlencoded({extended : true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.static("public"));
 
@@ -28,14 +28,14 @@ app.use("/Com1", Com1);
 // })
 
 const port = 4200 || process.env.PORT;
-const start =
-    async () => {
+const start = async () => {
   try {
-    server.listen(
-        port, () => console.log(`server is listening to port ${port}........`));
+    server.listen(port, () =>
+      console.log(`server is listening to port ${port}........`)
+    );
   } catch (error) {
     console.log(error);
   }
-}
+};
 
 start();
