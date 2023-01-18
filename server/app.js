@@ -10,15 +10,15 @@ const app = express();
 const server = http.createServer(app);
 const io = socket(server);
 
-//midlleware
+// midlleware
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended : true}));
 app.use(cors());
 
-app.get("/testing", async(req, res, next)=>{
-    const data = await Chat.find({})
-    console.log(data);
-    res.status(200).json({data});
+app.get("/testing", async (req, res, next) => {
+  const data = await Chat.find({})
+  console.log(data);
+  res.status(200).json({data});
 })
 
 // app.get("/put", async(req, res, next)=>{
@@ -27,17 +27,19 @@ app.get("/testing", async(req, res, next)=>{
 //     res.send("sucess");
 // })
 
-const port = 4200||process.env.PORT;
-const start = async()=>{
-    try {
-        // await new Promise(resolve=>{
-        //     require("./db/connection");
-        //     resolve();
-        // });
-        server.listen(port, ()=>console.log(`server is listening to port ${port}........`));
-    } catch (error) {
-        console.log(error);
-    }
+const port = 4200 || process.env.PORT;
+const start =
+    async () => {
+  try {
+    // await new Promise(resolve=>{
+    //     require("./db/connection");
+    //     resolve();
+    // });
+    server.listen(
+        port, () => console.log(`server is listening to port ${port}........`));
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 start();
