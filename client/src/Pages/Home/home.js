@@ -1,9 +1,14 @@
 import React from 'react';
-
+import Navbar from '../../Components/Images/Navbar/navbar';
+// import Sidebar from '../../Components/Images/Sidebar/sidebar';
+import Chat from '../../Components/Images/Chat_section/chat'
+import "./home.css"
 const Home = () => {
     return (
         <>
-        <h1>this is home page</h1>
+        <Navbar/>
+        {/* <Sidebar/> */}
+        <Chat/>
         </>
     );
 }

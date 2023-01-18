@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:black
+}
+
+body {
+    background: rgb(2, 0, 36);
+    background: radial-gradient(
+      circle,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(30, 54, 59, 1) 0%,
+      rgba(93, 93, 116, 1) 100%
+    );
+  }
+  
+  .container {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 70vh;
+      max-width: 500px;
+      width: 100%;
+      margin: auto;
+      margin-top: 20vh;
+    }
+
+    .container > form {
+        width: 70%;
+        /* border: 1px solid #dfdfdf; */
+        padding: 20px;
+        border-radius: 5px;
+        background-color:rgb(40, 40, 43);
+    /* background: #fff; */
+  }
+  pre {
+    width: 70%;
+    color: #fff;
+    font-size: larger;
+  }
+  
+  /* button {
+    background: #0563b4 !important;
+    b
+  } */
+.btn{
+        cursor: pointer;
+      
+        border: none;
+        border-radius: 8px;
+      
+        box-shadow: 2px 2px 7px #38d39f70;
+      
+        background: #38d39f;
+        color: rgba(255, 255, 255, 0.8);
+      
+        width: 80px;
+      
+        transition: all 1s;
+      
+        
+    }
+   /* Changing the color of the button when you hover over it. */
+    /* .btn:hover {
+      color: rgb(255, 255, 255);
+    
+      box-shadow: none;
+    } */
+label{
+    color: aliceblue;
+}
+
+    .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

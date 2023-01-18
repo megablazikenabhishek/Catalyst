@@ -23,8 +23,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height:70vh;
-    width:40vw;
+    height:50vh;
+    width:30vw;
     margin:auto;
     margin-top: 20vh;
     border-radius: 15px;
@@ -46,9 +46,7 @@
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     background: #121212; /* fallback for old browsers */
     overflow-x: hidden;
-  
     height: 100%;
-  
     /* code to make all text unselectable */
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -63,7 +61,7 @@
   body:not(.user-is-tabbing) input:focus,
   body:not(.user-is-tabbing) select:focus,
   body:not(.user-is-tabbing) textarea:focus {
-    outline: none;
+  outline: none;
   }
   
   /* ########################################################## */
@@ -77,7 +75,6 @@
   
   .flex-container {
     width: 100vw;
-  
     margin-top: 25vh;
     display: flex;
     justify-content: center;
@@ -86,28 +83,25 @@
   
   .content-container {
     width: 500px;
-    height: 350px;
+    height: 450px;
+    /* height:60vh;
+    width:30vw; */
   }
   
   .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-  
     width: 500px;
-    height: 350px;
-  
+    height: 450px;
     margin-top: 5px;
     padding-top: 20px;
-  
     border-radius: 12px;
-  
     display: flex;
     justify-content: center;
     flex-direction: column;
-  
     background: #1f1f1f;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199); */
   }
   
   .subtitle {
