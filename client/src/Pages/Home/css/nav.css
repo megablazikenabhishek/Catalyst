@@ -1,0 +1,83 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #23272a;
+    padding: 5px 30px;
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    border-bottom: 0.5px solid black;
+}
+
+.company{
+    display: flex;
+    align-items: center;
+    margin-left: -9px;
+
+}
+
+.company h1{
+    padding-left: 25px;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+.img{
+    width:45px;
+}
+
+.list{
+    display: flex;
+    align-items: center;
+}
+
+.searchbar{
+    display: flex;
+    background-color: white;
+    padding: 5px 10px;
+    background-color: #7980863c;
+}
+
+.list input{
+    margin-right: 15px;
+}
+
+.searchimg{
+    width: 20px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
+    cursor:pointer;
+    transition: opacity 0.2s;
+}
+
+.searchimg:active{
+    opacity:0.2;
+}
+
+.search{
+    border:none;
+    background-color: transparent;
+    line-height: 10px   ;
+    font-size: 15px;
+    color:white;
+    padding-left:15px;
+    width: 183px;
+    transition: width 0.2s;
+}
+
+.search:focus{
+    outline: none;
+    width: 250px;
+}
+
+.icon{
+    width:30px;
+    cursor:pointer;
+    padding: 0px 15px;
+}
+
+#cross{
+    display: none;
+}
