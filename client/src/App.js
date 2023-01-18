@@ -1,25 +1,20 @@
-import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Login from "./Pages/Login/login";
-import Home from "./Pages/Home/home";
-import Signup from "./Pages/Signup/signup";
+import './App.css';
+import Chat from './Pages/Home/Chat.js'
+import Nav from './Pages/Home/Nav.js'
+import Navvertical from './Pages/Home/Navvertical.js'
+import Community from './Pages/Home/Community.js'
+
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route path="/signup">
-            <Signup/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </>
+    <div>
+    
+    <Nav />
+    <div class="dashboard">
+    <Navvertical />
+    <Community />
+    <Chat />
+    </div>
+</div>
   );
 }
 
