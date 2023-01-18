@@ -14,7 +14,7 @@ export default function Chat() {
     const url = "/testing";
     const fetchData = async () => {
       try {
-        const response = await fetch(url);
+        const response = await fetch("http://localhost:4200/testing/");
         const json = await response.json();
         console.log(json);
       } catch (error) {
