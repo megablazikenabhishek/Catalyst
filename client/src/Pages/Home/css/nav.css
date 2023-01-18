@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     margin-left: -9px;
-    
+
 }
 
 .company h1{
@@ -44,7 +44,7 @@
 }
 
 .searchimg{
-    width: 20px;   
+    width: 20px;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
@@ -62,7 +62,7 @@
     line-height: 10px   ;
     font-size: 15px;
     color:white;
-    padding-left:15px; 
+    padding-left:15px;
     width: 183px;
     transition: width 0.2s;
 }

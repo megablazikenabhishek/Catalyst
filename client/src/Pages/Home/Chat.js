@@ -1,13 +1,15 @@
-import {React,useEffect} from "react";
 import "./css/chat.css";
-import logo from "./imgs/blog.jpg"
-const Community_name='mumbra gang'
-const count=4
+
+import { React, useEffect } from "react";
+
+import logo from "./imgs/blog.jpg";
+
+const Community_name = "mumbra gang";
+const count = 4;
 // const USERcount=['jagjeet','abhishek','parth','hamza'];
-const room_name='yellow'
+const room_name = "yellow";
 
 export default function Chat() {
-
   useEffect(() => {
     const url = "/testing";
     const fetchData = async () => {
@@ -20,7 +22,7 @@ export default function Chat() {
       }
     };
     fetchData();
-}, []);
+  }, []);
   return (
     <div className="siding">
       <div className="chat-container">
@@ -38,22 +40,22 @@ export default function Chat() {
           <div className="chat-sidebar">
             <h3>
               <i className="fas fa-comments"></i>{" "}
-              <p className="x">Room Name:{room_name}</p>
+              <p className="x">Room Name: {room_name}</p>
             </h3>
             <h2 id="room-name">JavaScript</h2>
             <h3>
               <i className="fas fa-users"></i>{" "}
-              <p className="x">UsersCount : {count}</p>
+              <p className="x">UsersCount: {count}</p>
             </h3>
             <ul id="users x">{/* <li className='x'>{count}</li> */}</ul>
           </div>
           <div className="chat-messages">
             <div className="message">
               <div className="full_header">
-                <img  className='modifier'src={logo} alt=""/>
-              <p className="meta">
-                Brad <span>12:34pm</span>
-              </p>
+                <img className="modifier" src={logo} alt="" />
+                <p className="meta">
+                  Brad<span>12: 34pm </span>
+                </p>
               </div>
               <p className="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
