@@ -4,7 +4,7 @@ import React from "react";
 
 import logo from "../../logo.png";
 
-import cross from "./imgs/cross.png"
+import cross from "./imgs/cross.png";
 import gear from "./imgs/gear.png";
 import search from "./imgs/search.png";
 import user from "./imgs/user.png";

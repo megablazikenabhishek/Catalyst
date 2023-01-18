@@ -2,7 +2,7 @@ import "./css/community.css";
 
 import React from "react";
 
-import mic from "./imgs/mic.png"
+import mic from "./imgs/mic.png";
 import video from "./imgs/video.png";
 
 export default function Community() {
