@@ -14,7 +14,7 @@ body {
       rgba(93, 93, 116, 1) 100%
     );
   }
-  
+
   .container {
       display: flex !important;
       flex-direction: column;
@@ -40,32 +40,32 @@ body {
     color: #fff;
     font-size: larger;
   }
-  
+
   /* button {
     background: #0563b4 !important;
     b
   } */
 .btn{
         cursor: pointer;
-      
+
         border: none;
         border-radius: 8px;
-      
+
         box-shadow: 2px 2px 7px #38d39f70;
-      
+
         background: #38d39f;
         color: rgba(255, 255, 255, 0.8);
-      
+
         width: 80px;
-      
+
         transition: all 1s;
-      
-        
+
+
     }
    /* Changing the color of the button when you hover over it. */
     /* .btn:hover {
       color: rgb(255, 255, 255);
-    
+
       box-shadow: none;
     } */
 label{
