@@ -1,8 +1,9 @@
-const express = require("express")
+const express = require("express");
 const router = express.Router();
 
-const socket = require("socket.io");
-
-router.route("/Comp1", (req, res, next)=>{
-
+router.get("/", (req, res, next)=>{
+    var io = req.app.get('socketio');
+    io.emit("connected", "hello");
 })
+
+module.exports = router;
