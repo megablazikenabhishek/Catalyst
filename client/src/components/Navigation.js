@@ -14,11 +14,12 @@ function Navigation() {
         window.location.replace("/");
     }
     return (
-        <Navbar bg="light" expand="lg">
+        // <Navbar bg="dark" varient="dark">
+        <Navbar bg="dark" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand>
-                        <img src={logo} style={{ width: 50, height: 50 }} />
+                        <img src={logo} style={{ width: 50, height: 50 }} alt="logo"/>
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +27,7 @@ function Navigation() {
                     <Nav className="ms-auto">
                         {!user && (
                             <LinkContainer to="/login">
-                                <Nav.Link>Login</Nav.Link>
+                                <Nav.Link >Login</Nav.Link>
                             </LinkContainer>
                         )}
                         <LinkContainer to="/chat">
