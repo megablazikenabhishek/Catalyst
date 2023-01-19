@@ -6,7 +6,7 @@
 }
 
 .list-group{
-    margin-top: 14px;
+    margin-top: 30px;
 }
 .empty{
     text-align: center;
@@ -47,12 +47,29 @@
 }
 
 .mytxt{
-    width:35px;
-    flex:0.1;
+    width:24px;
 }
+
 .list-group-item {
     padding: 6px 24px !important;
 font-weight: 600;
+}
+
+.population{
+    display: flex;
+    width:55px;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
+    border: none;
+    border-radius: 8px;
+    width: 60px;
+    /* height: 32px; */
+    padding: 5px 4px;
+    height: 31px;
 }
 
 .member-status {
@@ -92,27 +109,3 @@ color: white;
     bottom: 0;
     left: 12px;
 }
-
-/* Webkit browsers */
-::-webkit-scrollbar {
-    width: 0.4em; /* Width of the scrollbar */
-
-  }
-  
-  /* Track (the moving part of the scrollbar) */
-  ::-webkit-scrollbar-thumb {
-    background-color: grey; /* Thumb color */
-    border-radius: 10px; /* Rounded corners */
-  }
-  
-  /* Firefox */
-  scrollbar {
-    width: 0.4em; /* Width of the scrollbar */
-    background-color: #000; /* Background color */
-  }
-  
-  /* Track (the moving part of the scrollbar) */
-  scrollbar-thumb {
-    background-color: grey; /* Thumb color */
-    border-radius: 10px; /* Rounded corners */
-  }
