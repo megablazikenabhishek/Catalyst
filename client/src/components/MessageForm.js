@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -71,7 +72,7 @@ function MessageForm() {
                             {messagesByDate?.map(({ content, time, from: sender }, msgIdx) => (
                                 <div className={sender?.email == user?.email ? "message" : "incoming-message"} key={msgIdx}>
                                     <div className="message-inner">
-                                        <div className="d-flex align-items-center mb-3">
+                                        <div className="d-flex align-items-center userinfo">
                                             <img src={sender.picture} style={{ width: 35, height: 35, objectFit: "cover", borderRadius: "50%", marginRight: 10 }} />
                                             <p className="message-sender">{sender._id == user?._id ? "You" : sender.name}</p>
                                         </div>
