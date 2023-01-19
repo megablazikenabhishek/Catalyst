@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppContext } from "../context/appContext";
 import { addNotifications, resetNotifications } from "../features/userSlice";
 import "./Sidebar.css";
-import mic from "../assets/mic.png"
+import pop from "../assets/pop.png"
 
 function Sidebar() {
     const user = useSelector((state) => state.user);
@@ -70,8 +70,11 @@ function Sidebar() {
             <ListGroup>
             <h2 className="empty">Available rooms</h2>
                 {rooms.map((room, idx) => (
-                    <ListGroup.Item className="roomlist" key={idx} onClick={() => joinRoom(room)} active={room == currentRoom} style={{cursor: "pointer", display: "flex", justifyContent: "space-between", backgroundColor:"transparent",color:"white" }}>  
-                    <img className="mytxt"  src={mic} alt="" />
+                    <ListGroup.Item className="roomlist" key={idx} onClick={() => joinRoom(room)} active={room == currentRoom} style={{cursor: "pointer", display: "flex", justifyContent: "space-between", backgroundColor:"transparent",color:"white" }}> 
+                    <div class="population">
+                    <img className="mytxt"  src={pop} alt="" />
+                    <p>25</p>
+                    </div> 
                         {room} {currentRoom !== room && <span className="badge rounded-pill bg-primary">{user.newMessages[room]}</span>}
 
                     </ListGroup.Item>

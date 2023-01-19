@@ -4,10 +4,16 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { AppContext } from "../context/appContext";
 import "./MessageForm.css";
+import staroutline from "../assets/staroutline.png";
+import starfill from "../assets/starfill.png";
+import upvote from "../assets/upvote.png";
+
 function MessageForm() {
     const [message, setMessage] = useState("");
     const user = useSelector((state) => state.user);
     const { socket, currentRoom, setMessages, messages, privateMemberMsg } = useContext(AppContext);
+    console.log(messages);
+    //id is in messagebydate
     const messageEndRef = useRef(null);
     useEffect(() => {
         scrollToBottom();
@@ -39,7 +45,6 @@ function MessageForm() {
     socket.off("room-messages").on("room-messages", (roomMessages) => {
         setMessages(roomMessages);
     });
-
     function handleSubmit(e) {
         e.preventDefault();
         if (!message) return;
@@ -53,7 +58,7 @@ function MessageForm() {
     return (
         <>
             <div className="messages-output">
-                {user && !privateMemberMsg?._id && <div className="alert alert-info">You are in the {currentRoom} room</div>}
+                {user && !privateMemberMsg?._id && <div className="alert alert-info" id="headingchat">{currentRoom} room</div>}
                 {user && privateMemberMsg?._id && (
                     <>
                         <div className="alert alert-info conversation-info">
@@ -72,9 +77,15 @@ function MessageForm() {
                             {messagesByDate?.map(({ content, time, from: sender }, msgIdx) => (
                                 <div className={sender?.email == user?.email ? "message" : "incoming-message"} key={msgIdx}>
                                     <div className="message-inner">
-                                        <div className="d-flex align-items-center userinfo">
+                                        <div id="userinfo" className="d-flex align-items-center userinfo">
+                                        <div id="prochat">
                                             <img src={sender.picture} style={{ width: 35, height: 35, objectFit: "cover", borderRadius: "50%", marginRight: 10 }} />
                                             <p className="message-sender">{sender._id == user?._id ? "You" : sender.name}</p>
+                                            </div>
+                                            <div className="messagediv">
+                                            <img className="vote" src={upvote} alt="" />
+                                            <img id="star" src={staroutline}></img>
+                                            </div>
                                         </div>
                                         <p className="message-content">{content}</p>
                                         <p className="message-timestamp-left">{time}</p>
