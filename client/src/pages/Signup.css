@@ -5,6 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    display: none;
 }
 
 .signup-profile-pic__container {
@@ -30,4 +31,22 @@
     background: white;
     cursor: pointer;
     z-index: 99;
+}
+
+.main_cont1{
+    background-image: url("../assets/background.jpg");
+    height: 120vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.y{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.login_box{
+    margin-top: 12vh;
 }

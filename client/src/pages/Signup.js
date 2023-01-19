@@ -61,10 +61,11 @@ function Signup() {
     }
 
     return (
+        <div className="main_cont1">
         <Container>
-            <Row>
+            <Row className="y">
                 <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
-                    <Form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleSignup}>
+                    <Form className="login_box" style={{ width: "80%", maxWidth: 500 }} onSubmit={handleSignup}>
                         <h1 className="text-center">Create account</h1>
                         <div className="signup-profile-pic__container">
                             <img src={imagePreview || botImg} className="signup-profile-pic" />
@@ -101,6 +102,7 @@ function Signup() {
                 <Col md={5} className="signup__bg"></Col>
             </Row>
         </Container>
+    </div>
     );
 }
 

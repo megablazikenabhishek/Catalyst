@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
+// import {motion} from "framer-motion/dist/framer-motion";
+// import { motion } from "framer-motion";
+// import PropagateLoader from "react-spinners/PropagateLoader";
 import { Col, Container, Form, Row, Button, Spinner } from "react-bootstrap";
 import { useLoginUserMutation } from "../services/appApi";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { AppContext } from "../context/appContext";
-
+// import {motion} from "framer-motion"
+// import bck from "../assets/background.jpg"
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -25,11 +29,13 @@ function Login() {
     }
 
     return (
-        <Container>
-            <Row>
-                <Col md={5} className="login__bg"></Col>
-                <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column">
-                    <Form style={{ width: "80%", maxWidth: 500 }} onSubmit={handleLogin}>
+        <>
+        <div className="main_cont">
+    <Container >
+    <Row className="x">
+                <Col md={5} className="login__bg "></Col>
+                <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column ">
+                    <Form className="login_box" style={{ width: "80%", maxWidth: 500 }} onSubmit={handleLogin}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             {error && <p className="alert alert-danger">{error.data}</p>}
                             <Form.Label>Email address</Form.Label>
@@ -53,6 +59,8 @@ function Login() {
                 </Col>
             </Row>
         </Container>
+        </div>
+        </>
     );
 }
 

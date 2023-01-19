@@ -7,8 +7,20 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chat from "./pages/Chat";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { AppContext, socket } from "./context/appContext";
+import PropagateLoader from "react-spinners/PropagateLoader";
+
+
+const override= {
+    display: "flex",
+    justifyContent: "center",
+    alignItems:"center",
+    margin: "40vh auto",
+    borderColor: "red",
+  };
+  
+
 
 function App() {
     const [rooms, setRooms] = useState([]);
@@ -18,8 +30,27 @@ function App() {
     const [privateMemberMsg, setPrivateMemberMsg] = useState({});
     const [newMessages, setNewMessages] = useState({});
     const user = useSelector((state) => state.user);
+
+    const [loading, setloading] = useState(false);
+
+    useEffect(() => {
+      setloading(true)
+     setTimeout(()=>{
+      setloading(false)
+     },3000)
+    }, []);
     return (
+        <div className="temp">
         <AppContext.Provider value={{ socket, currentRoom, setCurrentRoom, members, setMembers, messages, setMessages, privateMemberMsg, setPrivateMemberMsg, rooms, setRooms, newMessages, setNewMessages }}>
+        {loading  ?  
+    <PropagateLoader
+    color={"#060708"}
+    loading={loading}
+    cssOverride={override}
+    size={45}
+    aria-label="Loading Spinner"
+    data-testid="loader"
+  />:
             <BrowserRouter>
                 <Navigation />
                 <Routes>
@@ -33,7 +64,9 @@ function App() {
                     <Route path="/chat" element={<Chat />} />
                 </Routes>
             </BrowserRouter>
+}
         </AppContext.Provider>
+        </div>
     );
 }
 
