@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User');
+const Message = require("../models/Message");
 
 // creating user
 router.post('/', async(req, res)=> {
@@ -34,8 +35,35 @@ router.post('/login', async(req, res)=> {
   }
 })
 
-router.post("/save", (req, res) => {
-  console.log(req.body);
-  res.send("hii");
+router.post("/save", async(req, res) => {
+  const {savedMessages} = await User.findById(req.body.user_id);
+  
+  let flag = false;
+  savedMessages.forEach((i)=>{
+    if(i===req.body.message_id){
+      flag=true;
+    }
+  });
+
+  if(flag){
+    return res.send("done");
+  }
+
+  savedMessages.push(req.body.message_id);
+  console.log(savedMessages);
+  await User.findByIdAndUpdate(req.body.user_id, {savedMessages});
+  res.send("done");
 });
+
+router.get("/save", async(req, res)=>{
+  let result = [];
+  const {savedMessages} = await User.findById(req.body.user_id);
+  const msg = await Message.find({});
+  msg.forEach((i)=>{
+    if(savedMessages.includes(i._id))
+      result.push(i);
+  });
+  console.log(result);
+  res.json({data:result})
+})
 module.exports = router

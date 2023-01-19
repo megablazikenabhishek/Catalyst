@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
   },
   savedMessages: {
     type: Array,
-    default: []
+    default: ["shfishfsd", "sdfhsuihsih"]
   }
 }, {minimize: false});
 
