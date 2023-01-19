@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from "react";
 import { Col, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
-import pop from "../assets/pop.png";
+// import pop from "../assets/pop.png";
 import { AppContext } from "../context/appContext";
 import { addNotifications, resetNotifications } from "../features/userSlice";
 
@@ -96,7 +96,7 @@ function Sidebar() {
             }}
           >
             <div class="population">
-              <img className="mytxt" src={pop} alt="" />
+              <img className="mytxt" alt="" />
               <p>25</p>
             </div>
             {room}{" "}
