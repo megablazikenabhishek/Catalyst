@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const userRoutes = require('./routes/userRoutes')
+const messageRoutes = require('./routes/messageRoutes')
 const User = require('./models/User');
 const Message = require('./models/Message')
 const rooms = ['general', 'tech', 'finance', 'crypto', 'music', 'hamza'];
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/users', userRoutes)
+app.use("/chat", messageRoutes)
 require('./connection')
 
 const server = require('http').createServer(app);
