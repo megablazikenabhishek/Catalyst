@@ -21,8 +21,10 @@ const ChatSchema = mongoose.Schema({
         type: String,
         required: [true, "Please provide a name"],
         trim: true,
-        maxlength: [200, "Name cannot be more than 20 characters"]
+        maxlength: [200, "Name cannot be more than 200 characters"]
     },
 })
 
-module.exports = mongoose.Com1.model("Com1", ChatSchema);
+module.exports = mongoose.Com1.model("Com1_Chats", ChatSchema);
+module.exports = mongoose.Com2.model("Com2_Chats", ChatSchema);
+module.exports = mongoose.Com3.model("Com3_Chats", ChatSchema);

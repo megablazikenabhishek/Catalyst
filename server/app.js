@@ -18,12 +18,19 @@ app.use(express.static("public"));
 app.set("socketio", io);
 
 //routers
-const Com1 = require("./Routes/Com_1");
+const Com_1 = require("./Routes/Com_1");
 
-app.use("/Com1", Com1);
+app.use("/Com1", Com_1);
+
+//dummy
+// const Com1_Chats = require("./models/Chat");
+// const Com2_Chats = require("./models/Chat");
+// const Com3_Chats = require("./models/Chat");
+// const Users = require("./models/Users");
 // app.get("/put", async(req, res, next)=>{
-//     const data = require("./populate");
-//     await Chat.create(data);
+//     const data = require("./populate_users");
+//     console.log(data);
+//     await Users.create(data);
 //     res.send("sucess");
 // })
 
