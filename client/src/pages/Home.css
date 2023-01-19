@@ -5,9 +5,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    background-color: azure;
 }
 
 .home-message-icon {
     margin-left: 10px;
     display: inline-block;
 }
+
