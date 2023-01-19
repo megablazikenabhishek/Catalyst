@@ -36,5 +36,6 @@ router.post('/login', async(req, res)=> {
 
 router.post("/save", (req, res) => {
   console.log(req.body);
+  res.send("hii");
 });
 module.exports = router
