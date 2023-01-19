@@ -1,13 +1,13 @@
-import React, { createContext, useState, useRef, useEffect } from 'react';
-import { io } from 'socket.io-client';
+import React, {createContext, useEffect, useRef, useState} from 'react';
 import Peer from 'simple-peer';
+import {io} from 'socket.io-client';
 
 const SocketContext = createContext();
 
 const socket = io('http://localhost:5000');
 // const socket = io('https://warm-wildwood-81069.herokuapp.com');
 
-const ContextProvider = ({ children }) => {
+const ContextProvider = ({children}) => {
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
   const [stream, setStream] = useState();
