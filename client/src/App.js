@@ -1,51 +1,40 @@
-import React from 'react';
-import { Typography, AppBar } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Chat from "./pages/Chat";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import { AppContext, socket } from "./context/appContext";
 
-import VideoPlayer from './components/VideoPlayer';
-import Sidebar from './components/Sidebar';
-import Notifications from './components/Notifications';
-
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    borderRadius: 15,
-    margin: '30px 100px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '600px',
-    border: '2px solid black',
-
-    [theme.breakpoints.down('xs')]: {
-      width: '90%',
-    },
-  },
-  image: {
-    marginLeft: '15px',
-  },
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-  },
-}));
-
-const App = () => {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.wrapper}>
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography variant="h2" align="center">Video Chat</Typography>
-      </AppBar>
-      <VideoPlayer />
-      <Sidebar>
-        <Notifications />
-      </Sidebar>
-    </div>
-  );
-};
+function App() {
+    const [rooms, setRooms] = useState([]);
+    const [currentRoom, setCurrentRoom] = useState([]);
+    const [members, setMembers] = useState([]);
+    const [messages, setMessages] = useState([]);
+    const [privateMemberMsg, setPrivateMemberMsg] = useState({});
+    const [newMessages, setNewMessages] = useState({});
+    const user = useSelector((state) => state.user);
+    return (
+        <AppContext.Provider value={{ socket, currentRoom, setCurrentRoom, members, setMembers, messages, setMessages, privateMemberMsg, setPrivateMemberMsg, rooms, setRooms, newMessages, setNewMessages }}>
+            <BrowserRouter>
+                <Navigation />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    {!user && (
+                        <>
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/signup" element={<Signup />} />
+                        </>
+                    )}
+                    <Route path="/chat" element={<Chat />} />
+                </Routes>
+            </BrowserRouter>
+        </AppContext.Provider>
+    );
+}
 
 export default App;
