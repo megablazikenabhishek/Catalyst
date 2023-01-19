@@ -1,76 +1,89 @@
-import React, { useContext, useEffect } from "react";
-import { Col, ListGroup, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { AppContext } from "../context/appContext";
-import { addNotifications, resetNotifications } from "../features/userSlice";
 import "./Sidebar.css";
+
+import React, {useContext, useEffect} from "react";
+import {Col, ListGroup, Row} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+
 import pop from "../assets/pop.png"
+import {AppContext} from "../context/appContext";
+import {addNotifications, resetNotifications} from "../features/userSlice";
 
 function Sidebar() {
-    const user = useSelector((state) => state.user);
-    const dispatch = useDispatch();
-    const { socket, setMembers, members, setCurrentRoom, setRooms, privateMemberMsg, rooms, setPrivateMemberMsg, currentRoom } = useContext(AppContext);
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const {
+    socket,
+    setMembers,
+    members,
+    setCurrentRoom,
+    setRooms,
+    privateMemberMsg,
+    rooms,
+    setPrivateMemberMsg,
+    currentRoom
+  } = useContext(AppContext);
 
-    function joinRoom(room, isPublic = true) {
-        if (!user) {
-            return alert("Please login");
-        }
-        socket.emit("join-room", room, currentRoom);
-        setCurrentRoom(room);
-
-        if (isPublic) {
-            setPrivateMemberMsg(null);
-        }
-        // dispatch for notifications
-        dispatch(resetNotifications(room));
-    }
-
-    socket.off("notifications").on("notifications", (room) => {
-        if (currentRoom != room) dispatch(addNotifications(room));
-    });
-
-    useEffect(() => {
-        if (user) {
-            setCurrentRoom("general");
-            getRooms();
-            socket.emit("join-room", "general");
-            socket.emit("new-user");
-        }
-    }, []);
-
-    socket.off("new-user").on("new-user", (payload) => {
-        setMembers(payload);
-    });
-
-    function getRooms() {
-        fetch("http://localhost:5001/rooms")
-            .then((res) => res.json())
-            .then((data) => setRooms(data));
-    }
-
-    function orderIds(id1, id2) {
-        if (id1 > id2) {
-            return id1 + "-" + id2;
-        } else {
-            return id2 + "-" + id1;
-        }
-    }
-
-    function handlePrivateMemberMsg(member) {
-        setPrivateMemberMsg(member);
-        const roomId = orderIds(user._id, member._id);
-        joinRoom(roomId, false);
-    }
-
+  function joinRoom(room, isPublic = true) {
     if (!user) {
-        return <></>;
+      return alert("Please login");
+    }
+    socket.emit("join-room", room, currentRoom);
+    setCurrentRoom(room);
+
+    if (isPublic) {
+      setPrivateMemberMsg(null);
+    }
+    // dispatch for notifications
+    dispatch(resetNotifications(room));
+  }
+
+  socket.off("notifications").on("notifications", (room) => {
+    if (currentRoom != room)
+      dispatch(addNotifications(room));
+  });
+
+  useEffect(() => {
+    if (user) {
+      setCurrentRoom("general");
+      getRooms();
+      socket.emit("join-room", "general");
+      socket.emit("new-user");
+    }
+  }, []);
+
+  socket.off("new-user").on("new-user", (payload) => { setMembers(payload); });
+
+  function getRooms() {
+    fetch("http://localhost:5001/rooms")
+        .then((res) => res.json())
+        .then((data) => setRooms(data));
+  }
+
+  function orderIds(id1, id2) {
+    if (id1 > id2) {
+      return id1 + "-" + id2;
+    } else {
+      return id2 + "-" + id1;
+    }
+  }
+
+  function handlePrivateMemberMsg(member) {
+    setPrivateMemberMsg(member);
+    const roomId = orderIds(user._id, member._id);
+    joinRoom(roomId, false);
+  }
+
+  if (!user) {
+    return <><
+        />;
     }
     return (
         <>
             <ListGroup>
-            <h2 className="empty">Available rooms</h2>
-                {rooms.map((room, idx) => (
-                    <ListGroup.Item className="roomlist" key={idx} onClick={() => joinRoom(room)} active={room == currentRoom} style={{cursor: "pointer", display: "flex", justifyContent: "space-between", backgroundColor:"transparent",color:"white" }}> 
+            <h2 className="empty">Available rooms</h2> {rooms.map((room, idx) => (
+                    <ListGroup.Item className="roomlist" key={idx} onClick={() => joinRoom(room)} active={room == currentRoom} style={{
+        cursor: "pointer", display: "flex", justifyContent: "space-between",
+            backgroundColor: "transparent", color: "white" }}> 
                     <div class="population">
                     <img className="mytxt"  src={pop} alt="" />
                     <p>25</p>
@@ -84,7 +97,8 @@ function Sidebar() {
             <div className="maindiv">
             <h2 className="empty">Members</h2>
             {members.map((member) => (
-                <ListGroup.Item className="roomlist" key={member.id} style={{ cursor: "pointer" }} active={privateMemberMsg?._id == member?._id} onClick={() => handlePrivateMemberMsg(member)} disabled={member._id === user._id}>
+                <ListGroup.Item className="roomlist" key={member.id} style={
+        { cursor: "pointer" }} active={privateMemberMsg?._id == member?._id} onClick={() => handlePrivateMemberMsg(member)} disabled={member._id === user._id}>
                 
                     <Row>
                         <Col xs={2} className="member-status">
@@ -106,6 +120,6 @@ function Sidebar() {
             </div>
         </>
     );
-}
+    }
 
-export default Sidebar;
+    export default Sidebar;
