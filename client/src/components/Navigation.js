@@ -15,6 +15,7 @@ function Navigation() {
     // redirect to home page
     window.location.replace("/");
   }
+  const PF = `http://localhost:3001/${user.name}`
   return (
     // <Navbar bg="dark" varient="dark">
     <Navbar bg="dark" variant="dark">
@@ -54,7 +55,7 @@ function Navigation() {
                 }
                 id="basic-nav-dropdown"
               >
-                <NavDropdown.Item href="#action/3.1">
+                <NavDropdown.Item href={PF}>
                   Video Chat
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

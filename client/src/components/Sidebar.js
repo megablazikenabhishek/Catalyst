@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from "react";
 import { Col, ListGroup, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
-// import pop from "../assets/pop.png";
+import pop from "../assets/pop.png";
 import { AppContext } from "../context/appContext";
 import { addNotifications, resetNotifications } from "../features/userSlice";
 
@@ -95,10 +95,7 @@ function Sidebar() {
               color: "white",
             }}
           >
-            <div class="population">
-              <img className="mytxt" alt="" />
-              <p>25</p>
-            </div>
+            <img className="mytxt" alt="" src={pop} />
             {room}{" "}
             {currentRoom !== room && (
               <span className="badge rounded-pill bg-primary">
