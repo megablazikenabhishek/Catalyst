@@ -118,10 +118,6 @@ function MessageForm() {
                           </p>
                         </div>
                         <div className="messagediv">
-                          <div className="votediv">
-                            <img className="vote" src={upvote} alt="" />
-                            <p className="votecount">25</p>
-                          </div>
                           <img id="star" src={staroutline}></img>
                         </div>
                       </div>
