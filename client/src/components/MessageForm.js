@@ -1,25 +1,23 @@
 import "./MessageForm.css";
 
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { Button, Col, Form, Row } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import React, {useContext, useEffect, useRef, useState} from "react";
+import {Button, Col, Form, Row} from "react-bootstrap";
+import {useSelector} from "react-redux";
 
 import starfill from "../assets/starfill.png";
 import staroutline from "../assets/staroutline.png";
 import upvote from "../assets/upvote.png";
-import { AppContext } from "../context/appContext";
+import {AppContext} from "../context/appContext";
 
 function MessageForm() {
   const [message, setMessage] = useState("");
   const user = useSelector((state) => state.user);
-  const { socket, currentRoom, setMessages, messages, privateMemberMsg } =
-    useContext(AppContext);
+  const {socket, currentRoom, setMessages, messages, privateMemberMsg} =
+      useContext(AppContext);
   console.log(messages);
   // id is in messagebydate
   const messageEndRef = useRef(null);
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+  useEffect(() => { scrollToBottom(); }, [ messages ]);
 
   function getFormattedDate() {
     const date = new Date();
@@ -34,25 +32,23 @@ function MessageForm() {
     return month + "/" + day + "/" + year;
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+  function handleSubmit(e) { e.preventDefault(); }
 
   function scrollToBottom() {
-    messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messageEndRef.current?.scrollIntoView({behavior : "smooth"});
   }
 
   const todayDate = getFormattedDate();
 
-  socket.off("room-messages").on("room-messages", (roomMessages) => {
-    setMessages(roomMessages);
-  });
+  socket.off("room-messages")
+      .on("room-messages", (roomMessages) => { setMessages(roomMessages); });
   function handleSubmit(e) {
     e.preventDefault();
-    if (!message) return;
+    if (!message)
+      return;
     const today = new Date();
     const minutes =
-      today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
+        today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();
     const time = today.getHours() + ":" + minutes;
     const roomId = currentRoom;
     socket.emit("message-room", roomId, message, user, time, todayDate);
@@ -133,21 +129,21 @@ function MessageForm() {
               )}
             </div>
           ))}
-        <div ref={messageEndRef} />
+        <div ref={
+    messageEndRef} />
       </div>
       <Form onSubmit={handleSubmit}>
         <Row>
           <Col md={11}>
             <Form.Group>
               <Form.Control
-                type="text"
-                placeholder="Your message"
-                disabled={!user}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              ></Form.Control>
+  type = "text"
+  placeholder = "Your message"
+  disabled = {!user} value = {message} onChange =
+      {(e) => setMessage(e.target.value)} >
+      </Form.Control>
             </Form.Group>
-          </Col>
+      </Col>
           <Col md={1}>
             <Button
               variant="primary"
@@ -156,11 +152,10 @@ function MessageForm() {
               disabled={!user}
             >
               <i className="fas fa-paper-plane"></i>
-            </Button>
-          </Col>
-        </Row>
-      </Form>
-    </>
+      </Button>
+          </Col></Row>
+      </Form><
+      />
   );
 }
 
