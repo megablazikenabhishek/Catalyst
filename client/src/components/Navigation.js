@@ -15,7 +15,7 @@ function Navigation() {
     // redirect to home page
     window.location.replace("/");
   }
-  const PF = `http://localhost:3001/${user.name}`
+  const PF = user ? `http://localhost:3001/${user.name}` : `/`;
   return (
     // <Navbar bg="dark" varient="dark">
     <Navbar bg="dark" variant="dark">
@@ -60,9 +60,6 @@ function Navigation() {
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Saved Messages
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
                 </NavDropdown.Item>
 
                 <NavDropdown.Item>
