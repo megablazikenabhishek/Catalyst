@@ -1,9 +1,5 @@
 body {
-    background:
-    linear-gradient(
-      rgba(255, 254, 254, 0.679), 
-      rgba(26, 25, 25, 0.189)
-    )
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 * {
