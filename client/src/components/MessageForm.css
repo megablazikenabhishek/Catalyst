@@ -70,8 +70,30 @@
     margin-left: 10px;
 }
 
-.incoming-message .message-inner .message-content{
-    text-align: right;
+#userinfo{
+    justify-content: space-between;
+}
+
+.messagediv{
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+
+.vote{
+    width:20px;
+    margin-right: -3px;
+    cursor:pointer
+}
+
+#prochat{
+    display: flex;
+    align-items: center;
+}
+
+#star{
+    width: 15px;
+    cursor:pointer;
 }
 .incoming-message .message-inner .message-timestamp-left{
     text-align: right;
@@ -81,7 +103,17 @@
     margin-right: 4rem;
 }
 
+.votediv{
+    position:relative;
+}
 
+.votecount{
+    position:absolute;
+    font-size: 12px;
+    right: -11px;
+    /* bottom: -16px; */
+    top: 14px;
+}
 /* Webkit browsers */
 ::-webkit-scrollbar {
     width: 0.4em; /* Width of the scrollbar */
