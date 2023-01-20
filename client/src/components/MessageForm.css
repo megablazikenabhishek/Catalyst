@@ -1,40 +1,9 @@
 .messages-output {
     height: 80vh;
-    background-color: #141618;
+    border: 1px solid lightgray;
     overflow-y: scroll;
-    margin-top: 15px;
     margin-bottom: 20px;
-    outline: 0px !important;
-    border: 0px !important;
 }
-
-#headingchat{
-    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
-    border: none;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-/*for date info in chat*/
-#dateinfo{
-    background-color: #7289da;
-    /* color: white; */
-    border: none !important;
-    color: black;
-    height: 22px;
-    width: 100px;
-    border-radius: 0.25rem;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 15px
-}
-
 *{
     /* color:#000; */
     outline: none;
@@ -45,7 +14,7 @@
     margin-left: 20px;
     margin-bottom: 10px;
     padding: 10px;
-    min-width: 250px;
+    min-width: 100px;
     max-width: 55%;
     text-align: left;
     min-height: 60px;
@@ -53,7 +22,7 @@
     display: inline-block;
     border-radius: 10px;
     background-color: #57f287;
-    position:relative;
+
 }
 
 
@@ -107,7 +76,7 @@
 
 .messagediv{
     display: flex;
-    column-gap: 22px;
+    column-gap: 15px;
     align-items: center;
 }
 
@@ -126,7 +95,6 @@
     width: 15px;
     cursor:pointer;
 }
-
 .incoming-message .message-inner .message-timestamp-left{
     text-align: right;
 }
@@ -151,19 +119,19 @@
     width: 0.4em; /* Width of the scrollbar */
 
   }
-  
+
   /* Track (the moving part of the scrollbar) */
   ::-webkit-scrollbar-thumb {
     background-color: grey; /* Thumb color */
     border-radius: 10px; /* Rounded corners */
   }
-  
+
   /* Firefox */
   scrollbar {
     width: 0.4em; /* Width of the scrollbar */
     background-color: #000; /* Background color */
   }
-  
+
   /* Track (the moving part of the scrollbar) */
   scrollbar-thumb {
     background-color: grey; /* Thumb color */

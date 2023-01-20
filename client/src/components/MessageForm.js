@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
+
+import starfill from "../assets/starfill.png";
+import staroutline from "../assets/staroutline.png";
+import upvote from "../assets/upvote.png";
 import { AppContext } from "../context/appContext";
 import "./MessageForm.css";
-import staroutline from "../assets/staroutline.png";
-import starfill from "../assets/starfill.png";
-import upvote from "../assets/upvote.png";
-
 function MessageForm() {
   const [message, setMessage] = useState("");
   const user = useSelector((state) => state.user);
