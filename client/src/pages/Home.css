@@ -1,5 +1,5 @@
 .home__bg {
-    background-image: url(https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80);
+    background-image: url(https://images.businessnewsdaily.com/app/uploads/2022/04/04075741/Entrepreneurship_George_Rudy.png);
     height: 92vh;
     background-position: center;
     background-size: cover;
@@ -13,3 +13,6 @@
     display: inline-block;
 }
 
+.greet{
+    margin-left: 3vw;
+}

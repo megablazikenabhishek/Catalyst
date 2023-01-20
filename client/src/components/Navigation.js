@@ -61,9 +61,6 @@ function Navigation() {
                 <NavDropdown.Item href="#action/3.2">
                   Saved Messages
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
 
                 <NavDropdown.Item>
                   <Button variant="danger" onClick={handleLogout}>
