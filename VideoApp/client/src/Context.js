@@ -15,7 +15,6 @@ const ContextProvider = ({ children }) => {
   const [me, setMe] = useState('');
   const name1 = window.location.href;
   const name = name1.slice(22);
-
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();

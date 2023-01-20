@@ -13,13 +13,14 @@ function Navigation() {
         // redirect to home page
         window.location.replace("/");
     }
+    const PF = `http://localhost:3001/${user.name}`
     return (
         // <Navbar bg="dark" varient="dark">
         <Navbar bg="dark" variant="dark">
             <Container>
                 <LinkContainer to="/">
                     <Navbar.Brand>
-                        <img src={logo} style={{ width: 50, height: 50 }} alt="logo"/>
+                        <img src={logo} style={{ width: 50, height: 50 }} alt="logo" />
                     </Navbar.Brand>
                 </LinkContainer>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -43,7 +44,7 @@ function Navigation() {
                                 }
                                 id="basic-nav-dropdown"
                             >
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href={PF}>Video Call</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
 

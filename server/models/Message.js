@@ -6,7 +6,11 @@ const MessageSchema = new mongoose.Schema({
   socketid: String,
   time: String,
   date: String,
-  to: String
+  to: String,
+  upvote:{
+    type:Array,
+    default:[]
+  }
 })
 
 const Message = mongoose.model('Message', MessageSchema);

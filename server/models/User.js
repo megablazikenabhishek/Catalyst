@@ -29,6 +29,10 @@ const UserSchema = new mongoose.Schema({
   status: {
     type: String,
     default: 'online'
+  },
+  savedMessages: {
+    type: Array,
+    default: ["shfishfsd", "sdfhsuihsih"]
   }
 }, {minimize: false});
 
