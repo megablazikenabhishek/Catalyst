@@ -16,8 +16,9 @@ const override= {
     display: "flex",
     justifyContent: "center",
     alignItems:"center",
-    margin: "40vh auto",
+    // margin: "40vh auto",
     borderColor: "red",
+    height:"60vh"
   };
   
 
@@ -40,11 +41,11 @@ function App() {
      },3000)
     }, []);
     return (
-        <div className="temp">
+            <div className="temp">
         <AppContext.Provider value={{ socket, currentRoom, setCurrentRoom, members, setMembers, messages, setMessages, privateMemberMsg, setPrivateMemberMsg, rooms, setRooms, newMessages, setNewMessages }}>
         {loading  ?  
     <PropagateLoader
-    color={"#060708"}
+    color={"#ffffff"}
     loading={loading}
     cssOverride={override}
     size={45}
