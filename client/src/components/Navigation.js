@@ -15,7 +15,7 @@ function Navigation() {
     // redirect to home page
     window.location.replace("/");
   }
-  const PF = `http://localhost:3001/${user.name}`
+  const PF = user ? `http://localhost:3001/${user.name}` : `/`;
   return (
     // <Navbar bg="dark" varient="dark">
     <Navbar bg="dark" variant="dark">
