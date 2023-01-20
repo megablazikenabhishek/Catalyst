@@ -1,12 +1,12 @@
 import "./Sidebar.css";
 
-import React, { useContext, useEffect } from "react";
-import { Col, ListGroup, Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import React, {useContext, useEffect} from "react";
+import {Col, ListGroup, Row} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
 
 import pop from "../assets/pop.png";
-import { AppContext } from "../context/appContext";
-import { addNotifications, resetNotifications } from "../features/userSlice";
+import {AppContext} from "../context/appContext";
+import {addNotifications, resetNotifications} from "../features/userSlice";
 
 function Sidebar() {
   const user = useSelector((state) => state.user);
@@ -38,7 +38,8 @@ function Sidebar() {
   }
 
   socket.off("notifications").on("notifications", (room) => {
-    if (currentRoom != room) dispatch(addNotifications(room));
+    if (currentRoom != room)
+      dispatch(addNotifications(room));
   });
 
   useEffect(() => {
@@ -50,14 +51,12 @@ function Sidebar() {
     }
   }, []);
 
-  socket.off("new-user").on("new-user", (payload) => {
-    setMembers(payload);
-  });
+  socket.off("new-user").on("new-user", (payload) => { setMembers(payload); });
 
   function getRooms() {
     fetch("http://localhost:5001/rooms")
-      .then((res) => res.json())
-      .then((data) => setRooms(data));
+        .then((res) => res.json())
+        .then((data) => setRooms(data));
   }
 
   function orderIds(id1, id2) {
@@ -83,19 +82,17 @@ function Sidebar() {
         <h2 className="empty">Available rooms</h2>{" "}
         {rooms.map((room, idx) => (
           <ListGroup.Item
-            className="roomlist"
+    className = "roomlist"
             key={idx}
             onClick={() => joinRoom(room)}
             active={room == currentRoom}
             style={{
-              cursor: "pointer",
-              display: "flex",
-              justifyContent: "space-between",
-              backgroundColor: "transparent",
-              color: "white",
+      cursor: "pointer", display: "flex", justifyContent: "space-between",
+          backgroundColor: "transparent", color: "white",
             }}
           >
-            <img className="mytxt" alt="" src={pop} />
+            <img className="mytxt" alt="" src={
+      pop} />
             {room}{" "}
             {currentRoom !== room && (
               <span className="badge rounded-pill bg-primary">
@@ -138,7 +135,8 @@ function Sidebar() {
               </Col>
             </Row>
           </ListGroup.Item>
-        ))}
+        ))
+  }
       </div>
     </>
   );
