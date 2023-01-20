@@ -162,19 +162,19 @@
     width: 0.4em; /* Width of the scrollbar */
 
   }
-  
+
   /* Track (the moving part of the scrollbar) */
   ::-webkit-scrollbar-thumb {
     background-color: grey; /* Thumb color */
     border-radius: 10px; /* Rounded corners */
   }
-  
+
   /* Firefox */
   scrollbar {
     width: 0.4em; /* Width of the scrollbar */
     background-color: #000; /* Background color */
   }
-  
+
   /* Track (the moving part of the scrollbar) */
   scrollbar-thumb {
     background-color: grey; /* Thumb color */
