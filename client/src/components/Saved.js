@@ -7,11 +7,14 @@ import staroutline from "../assets/staroutline.png";
 import starfill from "../assets/starfill.png";
 import upvote from "../assets/upvote.png";
 
-function MessageForm() {
+function Saved(){
   const [message, setMessage] = useState("");
   const user = useSelector((state) => state.user);
-  const { socket, currentRoom, setMessages, messages, privateMemberMsg } =
+  const { socket, currentRoom, setMessages,privateMemberMsg } =
     useContext(AppContext);
+
+  const [messages,setmessages] = useState([]);
+
   console.log(messages);
   //id is in messagebydate
   const messageEndRef = useRef(null);
@@ -64,19 +67,7 @@ function MessageForm() {
             {currentRoom} room
           </div>
         )}
-        {user && privateMemberMsg?._id && (
-          <>
-            <div className="alert alert-info conversation-info">
-              <div>
-                Your conversation with {privateMemberMsg.name}{" "}
-                <img
-                  src={privateMemberMsg.picture}
-                  className="conversation-profile-pic"
-                />
-              </div>
-            </div>
-          </>
-        )}
+        
         {!user && <div className="alert alert-danger">Please login</div>}
 
         {user &&
@@ -162,4 +153,4 @@ function MessageForm() {
   );
 }
 
-export default MessageForm;
+

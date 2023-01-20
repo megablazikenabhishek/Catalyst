@@ -107,7 +107,7 @@
 
 .messagediv{
     display: flex;
-    column-gap: 15px;
+    column-gap: 22px;
     align-items: center;
 }
 
@@ -135,7 +135,17 @@
     margin-right: 4rem;
 }
 
+.votediv{
+    position:relative;
+}
 
+.votecount{
+    position:absolute;
+    font-size: 12px;
+    right: -11px;
+    /* bottom: -16px; */
+    top: 14px;
+}
 /* Webkit browsers */
 ::-webkit-scrollbar {
     width: 0.4em; /* Width of the scrollbar */
