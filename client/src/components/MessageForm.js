@@ -56,8 +56,9 @@ function MessageForm() {
     socket.emit("message-room", roomId, message, user, time, todayDate);
     setMessage("");
   }
-  return (
-    <>
+  console.log(user);
+  return(
+    <div id="containdiv">
       <div className="messages-output">
         {user && !privateMemberMsg?._id && (
           <div className="alert alert-info" id="headingchat">
@@ -140,6 +141,7 @@ function MessageForm() {
               <Form.Control
                 type="text"
                 placeholder="Your message"
+                id="enter"
                 disabled={!user}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
@@ -158,7 +160,7 @@ function MessageForm() {
           </Col>
         </Row>
       </Form>
-    </>
+    </div>
   );
 }
 

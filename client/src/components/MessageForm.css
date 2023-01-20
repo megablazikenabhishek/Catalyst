@@ -4,8 +4,13 @@
     overflow-y: scroll;
     margin-top: 15px;
     margin-bottom: 20px;
+    background: #F0F7D4;
     outline: 0px !important;
     border: 0px !important;
+}
+
+#containdiv{
+    padding-left:-5px !important;
 }
 
 #headingchat{
@@ -18,8 +23,14 @@
     text-align: center;
     font-weight: bold;
     font-size: 20px;
+    color: #B2D732;
+    height: 68px;
+    background-color: #220f78 !important;
+    border-radius: 0px !important;
 }
-
+#enter{
+    margin-left: 11px
+}
 /*for date info in chat*/
 #dateinfo{
     background-color: #7289da;

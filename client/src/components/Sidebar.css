@@ -5,13 +5,28 @@
     object-fit: cover;
 }
 
+#roominfodiv{
+    padding-right: 0px !important;
+}
+
 .list-group{
     margin-top: 14px;
 }
 .empty{
     text-align: center;
-    margin: 10px 0px 20px 0px;
     color: white;
+    color: aliceblue;
+    /* border-radius: 0px !important; */
+    /* background: #FE2712; */
+    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+    border: none;
+    /* vertical-align: middle !important; */
+    height: 68px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .roomdiv{
@@ -19,12 +34,11 @@
 }
 
 .list-group{
-    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
     border: none;
-    border-radius: 8px;
+    color: #B2D732;
+    background: #3C2994;
+    height: 300px;
+    overflow: auto;
 }
 
 .roomlist{
@@ -34,6 +48,13 @@
     transition: opacity 0.2s;
     transition: box-shadow 0.2s;
     flex-direction: row-reverse;
+    padding: 10px 55px !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0px 78px; */
+    background-color: transparent;
+    color: white;
 }
 
 .roomlist:hover{
@@ -84,15 +105,12 @@ color: white;
 }
 
 .maindiv{
-    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow:0 8px 32px 0 rgba(0,0,0,0.37);
     border: none;
-    border-radius: 8px;
-    margin-top: 2vw;
     padding-bottom: 10px;
     padding-top: 2px;
+    background: orangered;
+    overflow: auto;
+    height: 300px;
 }
 
 .sidebar-offline-status {

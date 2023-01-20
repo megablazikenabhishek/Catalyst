@@ -66,7 +66,7 @@ function Sidebar() {
         return <></>;
     }
     return (
-        <>
+        <div id="roomsinfodiv">
             <ListGroup>
             <h2 className="empty">Available rooms</h2>
                 {rooms.map((room, idx) => (
@@ -104,7 +104,7 @@ function Sidebar() {
                 </ListGroup.Item>
             ))}
             </div>
-        </>
+        </div>
     );
 }
 
