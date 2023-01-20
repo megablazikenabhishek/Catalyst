@@ -1,10 +1,10 @@
 import React from "react";
-import {Button, Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import {useSelector} from "react-redux";
-import {LinkContainer} from "react-router-bootstrap";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { LinkContainer } from "react-router-bootstrap";
 
 import logo from "../assets/logo.png";
-import {useLogoutUserMutation} from "../services/appApi";
+import { useLogoutUserMutation } from "../services/appApi";
 
 function Navigation() {
   const user = useSelector((state) => state.user);
@@ -22,8 +22,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img src={logo} style={
-    { width: 50, height: 50 }} alt="logo" />
+            <img src={logo} style={{ width: 50, height: 50 }} alt="logo" />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -39,22 +38,24 @@ function Navigation() {
             </LinkContainer>
             {user && (
               <NavDropdown
-  title = {<>< img
+                title={
+                  <>
+                    <img
                       src={user.picture}
-                      style={
-    {
-      width: 30, height: 30, marginRight: 10, objectFit: "cover",
-          borderRadius: "50%",
-    }}
+                      style={{
+                        width: 30,
+                        height: 30,
+                        marginRight: 10,
+                        objectFit: "cover",
+                        borderRadius: "50%",
+                      }}
                     />
                     {user.name}
                   </>
                 }
                 id="basic-nav-dropdown"
               >
-                <NavDropdown.Item href={PF}>
-                  Video Chat
-                </NavDropdown.Item>
+                <NavDropdown.Item href={PF}>Video Chat</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Saved Messages
                 </NavDropdown.Item>
