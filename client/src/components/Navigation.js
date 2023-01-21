@@ -3,7 +3,7 @@ import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logoca.png";
 import { useLogoutUserMutation } from "../services/appApi";
 
 function Navigation() {
@@ -22,7 +22,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img src={logo} style={{ width: 50, height: 50 }} alt="logo" />
+            <img src={logo} style={{ width: "180px", height: "50px", objectFit: "cover" }} alt="logo" />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
