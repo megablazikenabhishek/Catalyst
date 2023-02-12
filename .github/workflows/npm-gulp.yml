@@ -29,3 +29,8 @@ jobs:
         cd ..
         cd server
         npm i
+        cd ..
+        cd VedioApp
+        npm i
+        cd client
+        npm i
