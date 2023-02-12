@@ -30,7 +30,7 @@ jobs:
         cd server
         npm i
         cd ..
-        cd VedioApp
+        cd VideoApp
         npm i
         cd client
         npm i
